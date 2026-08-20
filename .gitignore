@@ -18,7 +18,6 @@ data/processed/
 
 # Trained model files
 models/*.h5
-models/*.keras
 models/*.weights.h5
 
 # Generated outputs
