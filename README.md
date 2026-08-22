@@ -1,159 +1,115 @@
 # AI Based Medical Image Analysis – Chest X-Ray Pneumonia Detection
 
-An AI-based medical image classification system that analyzes chest X-ray images and predicts whether an image represents **NORMAL** or **PNEUMONIA** using MobileNetV2 transfer learning.
+An AI-based medical image classification system that uses **MobileNetV2 transfer learning** to classify chest X-ray images as **NORMAL** or **PNEUMONIA**.
 
-> **Medical Disclaimer:** This project is developed for educational, engineering, research, and portfolio purposes. It is not intended for clinical diagnosis, medical decision-making, or replacement of qualified medical professionals.
+The project demonstrates an end-to-end machine-learning workflow covering data preprocessing, transfer learning, model training, evaluation, single-image inference, interactive UI development, GitHub version control, and public deployment.
+
+> **Medical Disclaimer:** This project is developed for educational, engineering, research, and portfolio purposes only. It is not a clinically validated medical device and must not be used for diagnosis, treatment, or medical decision-making.
 
 ---
 
-## 1. Project Overview
+## Project Overview
 
-This project implements a complete deep-learning pipeline for binary classification of chest X-ray images.
-
-The system takes a chest X-ray image as input and classifies it into one of two classes:
+The system takes a chest X-ray image as input and predicts whether the image belongs to one of two classes:
 
 - **NORMAL**
 - **PNEUMONIA**
 
-The project demonstrates an end-to-end computer vision and machine-learning workflow:
+The project follows this workflow:
 
-```text
-Chest X-ray Dataset
-        ↓
-Data Loading
-        ↓
-Image Preprocessing
-        ↓
-MobileNetV2 Transfer Learning
-        ↓
-Model Training
-        ↓
-Model Evaluation
-        ↓
-Prediction Visualization
-        ↓
-Single Image Inference
-```
+    Chest X-ray Dataset
+            ↓
+    Data Loading & Preprocessing
+            ↓
+    MobileNetV2 Transfer Learning
+            ↓
+    Model Training
+            ↓
+    Model Evaluation
+            ↓
+    Single Image Inference
+            ↓
+    Streamlit Application
+            ↓
+    Public Deployment
 
-The project is designed as an industry-oriented proof-of-work demonstrating practical skills in:
-
-- Computer Vision
-- Deep Learning
-- Transfer Learning
-- Medical Image Classification
-- Python
-- TensorFlow / Keras
-- Model Evaluation
-- Data Visualization
-- Machine Learning Project Development
+The project is intended to demonstrate practical AI engineering rather than clinical deployment.
 
 ---
 
-## 2. Problem Statement
+## Problem Statement
 
-Chest X-ray images contain visual information that can be analyzed using computer vision and deep-learning techniques.
+Chest X-ray images contain visual patterns that can be analyzed using computer vision and deep-learning techniques.
 
-The objective of this project is to develop a machine-learning system that learns visual patterns from labeled chest X-ray images and classifies them as either:
+The objective of this project is to build a binary image-classification system that learns from labeled chest X-ray images and predicts whether an input image is classified as **NORMAL** or **PNEUMONIA**.
 
-```text
-NORMAL
-```
-
-or:
-
-```text
-PNEUMONIA
-```
-
-The project focuses on building a practical AI pipeline using a public chest X-ray dataset.
-
-It is not intended to replace professional medical diagnosis.
+The system uses a public chest X-ray dataset and a pretrained deep-learning architecture to demonstrate the complete development workflow.
 
 ---
 
-## 3. Project Objectives
+## Objectives
 
-The main objectives are to:
+The main objectives of the project are:
 
 - Build a reproducible medical image classification pipeline.
 - Load and preprocess chest X-ray images.
-- Normalize image data for deep-learning models.
-- Apply transfer learning using MobileNetV2.
+- Normalize image data for deep-learning inference.
+- Apply MobileNetV2 transfer learning.
 - Handle class imbalance using class weights.
 - Train and validate the classification model.
-- Evaluate the trained model on a separate test set.
-- Generate useful training and prediction outputs.
+- Evaluate the model on a separate test set.
+- Generate useful evaluation and visualization outputs.
 - Implement single-image inference.
-- Document the complete engineering workflow for GitHub.
+- Build an interactive Streamlit application.
+- Deploy the application publicly.
+- Document the complete engineering workflow.
 
 ---
 
-## 4. Industry Relevance
+## Key Features
 
-Medical imaging is an important application area for artificial intelligence and computer vision.
-
-AI-based image analysis systems can assist healthcare workflows by processing large collections of medical images and identifying visual patterns that may require further professional review.
-
-Potential industry environments include:
-
-- Hospitals
-- Diagnostic laboratories
-- Radiology centers
-- Medical imaging companies
-- Health-tech companies
-- Medical AI research organizations
-
-This project demonstrates the engineering workflow behind such systems using public data rather than real hospital infrastructure.
-
-The implementation is intended as a technical proof-of-work and not as a clinically validated medical product.
+- Chest X-ray binary classification
+- MobileNetV2 transfer learning
+- Image preprocessing and normalization
+- Class imbalance handling
+- Early stopping
+- Best-model checkpointing
+- Accuracy, precision, recall and F1-score evaluation
+- Confusion matrix generation
+- Classification report generation
+- Single-image inference
+- Prediction probability and confidence
+- Interactive Streamlit interface
+- Public Streamlit deployment
 
 ---
 
-## 5. Tech Stack
+## Technology Stack
 
-### Programming Language
-
-- Python
-
-### Deep Learning
-
-- TensorFlow
-- Keras
-- MobileNetV2
-
-### Computer Vision and Image Processing
-
-- OpenCV
-- Pillow
-
-### Numerical Computing
-
-- NumPy
-
-### Model Evaluation
-
-- Scikit-learn
-
-### Visualization
-
-- Matplotlib
-
-### Development Environment
-
-- Visual Studio Code
-- Python virtual environment
-- Git / GitHub
+| Category | Technology |
+|---|---|
+| Programming Language | Python |
+| Deep Learning | TensorFlow, Keras |
+| Model Architecture | MobileNetV2 |
+| Computer Vision | OpenCV, Pillow |
+| Numerical Computing | NumPy |
+| Evaluation | Scikit-learn |
+| Visualization | Matplotlib |
+| Application | Streamlit |
+| Development | Visual Studio Code |
+| Version Control | Git, GitHub |
+| Deployment | Streamlit Community Cloud |
 
 ---
 
-## 6. Dataset
+## Dataset
 
 The project uses a public chest X-ray dataset containing two classes:
 
 - **NORMAL**
 - **PNEUMONIA**
 
-The verified dataset contains:
+Verified class distribution:
 
 | Class | Images |
 |---|---:|
@@ -161,118 +117,50 @@ The verified dataset contains:
 | PNEUMONIA | 3,875 |
 | **Total** | **5,856** |
 
-The dataset is organized into:
+Verified dataset split:
 
-```text
-train/
-val/
-test/
-```
-
-The verified image distribution is:
-
-| Dataset | Images |
+| Split | Images |
 |---|---:|
 | Training | 5,216 |
 | Validation | 16 |
 | Test | 624 |
 | **Total** | **5,856** |
 
-The project uses the existing train, validation, and test directories rather than creating a new split inside the code.
+The project uses the existing train, validation, and test directories rather than creating a new split in the implementation.
+
+The dataset itself is not included in the GitHub repository.
 
 ---
 
-## 7. Dataset Structure
+## Dataset Structure
 
 The expected dataset structure is:
 
-```text
-chest_xray/
-│
-├── train/
-│   ├── NORMAL/
-│   └── PNEUMONIA/
-│
-├── val/
-│   ├── NORMAL/
-│   └── PNEUMONIA/
-│
-└── test/
-    ├── NORMAL/
-    └── PNEUMONIA/
-```
+    chest_xray/
+    │
+    ├── train/
+    │   ├── NORMAL/
+    │   └── PNEUMONIA/
+    │
+    ├── val/
+    │   ├── NORMAL/
+    │   └── PNEUMONIA/
+    │
+    └── test/
+        ├── NORMAL/
+        └── PNEUMONIA/
 
-The dataset path is configured in:
+The local dataset path is configured through `DATASET_DIR` in:
 
-```text
-src/data_pipeline.py
-```
-
-The local dataset path is defined through the `DATASET_DIR` variable.
-
-Because the dataset is stored locally, the dataset itself is not included in the GitHub repository.
+    src/data_pipeline.py
 
 ---
 
-## 8. System Architecture
-
-The complete system follows this architecture:
-
-```text
-                    CHEST X-RAY DATASET
-                            │
-                            ▼
-                  DATASET LOADING
-                            │
-                            ▼
-                  IMAGE PREPROCESSING
-                  ┌─────────┴─────────┐
-                  │                   │
-              Resize              RGB Input
-            224 × 224              3 Channels
-                  │                   │
-                  └─────────┬─────────┘
-                            ▼
-                    NORMALIZATION
-                       0–255 → 0–1
-                            │
-                            ▼
-                 MOBILENETV2 BACKBONE
-                  ImageNet Pretrained
-                   Frozen Feature
-                     Extractor
-                            │
-                            ▼
-                GLOBAL AVERAGE POOLING
-                            │
-                            ▼
-                     DROPOUT 0.30
-                            │
-                            ▼
-                    DENSE 1 UNIT
-                            │
-                            ▼
-                   SIGMOID OUTPUT
-                            │
-                            ▼
-                 PNEUMONIA PROBABILITY
-                            │
-                            ▼
-                     0.5 THRESHOLD
-                      /           \
-                     /             \
-                NORMAL          PNEUMONIA
-```
-
----
-
-## 9. Data Pipeline
+## Data Pipeline
 
 The data pipeline is implemented in:
 
-```text
-src/data_pipeline.py
-```
+    src/data_pipeline.py
 
 TensorFlow's `image_dataset_from_directory()` is used to load the images.
 
@@ -280,242 +168,181 @@ TensorFlow's `image_dataset_from_directory()` is used to load the images.
 
 | Parameter | Value |
 |---|---|
-| Label mode | Binary |
-| Color mode | RGB |
-| Image size | 224 × 224 |
+| Label Mode | Binary |
+| Color Mode | RGB |
+| Image Size | 224 × 224 |
 | Channels | 3 |
-| Batch size | 32 |
-| Random seed | 42 |
-| Training shuffle | Enabled |
-| Validation shuffle | Disabled |
-| Test shuffle | Disabled |
+| Batch Size | 32 |
+| Random Seed | 42 |
+| Training Shuffle | Enabled |
+| Validation Shuffle | Disabled |
+| Test Shuffle | Disabled |
 
-### Preprocessing
+---
 
-Each image is:
+## Image Preprocessing
 
-1. Loaded as RGB.
-2. Resized to `224 × 224`.
-3. Normalized from pixel range `0–255` to `0–1`.
-4. Passed through the TensorFlow data pipeline.
-5. Prefetched using `tf.data.AUTOTUNE`.
+Each image follows the following preprocessing workflow:
 
-The preprocessing flow is:
+    Original Chest X-ray
+            ↓
+    Convert to RGB
+            ↓
+    Resize to 224 × 224
+            ↓
+    Convert to numerical array
+            ↓
+    Normalize 0–255 → 0–1
+            ↓
+    Model Input
 
-```text
-Original Chest X-ray
-        ↓
-Resize to 224 × 224
-        ↓
-RGB / 3 Channels
-        ↓
-Pixel Normalization
-0–255 → 0–1
-        ↓
-Model Input
-```
+The TensorFlow data pipeline also uses `tf.data.AUTOTUNE` for prefetching.
 
 No image augmentation is implemented in the current version.
 
 ---
 
-## 10. Model Architecture
-
-The model is implemented in:
-
-```text
-src/model.py
-```
+## Model Architecture
 
 The project uses **MobileNetV2 transfer learning**.
 
-MobileNetV2 is initialized using ImageNet pretrained weights and is used as a frozen feature extractor.
+MobileNetV2 is initialized using ImageNet pretrained weights and used as a frozen feature extractor.
 
-### Base Model
+    MobileNetV2
+        │
+        ├── ImageNet pretrained weights
+        ├── include_top = False
+        └── Frozen feature extractor
 
-```text
-MobileNetV2
-├── ImageNet pretrained weights
-├── include_top = False
-└── Frozen feature extractor
-```
-
-The pretrained MobileNetV2 layers remain frozen during the current training process.
+The pretrained feature extractor remains frozen during the current training process.
 
 ### Classification Head
 
-The classification head is:
-
-```text
-MobileNetV2 Feature Extractor
-            ↓
-Global Average Pooling
-            ↓
-Dropout (0.30)
-            ↓
-Dense Layer (1 Unit)
-            ↓
-Sigmoid Activation
-            ↓
-Pneumonia Probability
-```
+    MobileNetV2 Feature Extractor
+                ↓
+    Global Average Pooling
+                ↓
+    Dropout (0.30)
+                ↓
+    Dense Layer (1 Unit)
+                ↓
+    Sigmoid Activation
+                ↓
+    PNEUMONIA Probability
 
 ### Model Input
 
-```text
-224 × 224 × 3
-```
+    224 × 224 × 3
 
 ### Model Output
 
-```text
-1 sigmoid probability
-```
+    1 sigmoid probability
 
 The sigmoid output represents the predicted probability of the **PNEUMONIA** class.
 
 ---
 
-## 11. MobileNetV2 Input Scaling
+## MobileNetV2 Input Scaling
 
-The data pipeline produces normalized pixel values in the range:
+The data pipeline initially normalizes image values:
 
-```text
-0 to 1
-```
+    0–255 → 0–1
 
-The model applies an additional scaling operation before passing the images into MobileNetV2:
+The model then applies the additional MobileNetV2 scaling:
 
-```text
-0–1
- ↓
--1–1
-```
+    0–1 → -1–1
 
-This transformation is implemented using a Keras `Rescaling` layer inside the model.
-
-Keeping the transformation inside the model helps maintain consistent preprocessing during both training and inference.
+The transformation is kept inside the model so that preprocessing remains consistent during training and inference.
 
 ---
 
-## 12. Training Methodology
+## Training
 
 Training is implemented in:
 
-```text
-src/train.py
-```
+    src/train.py
 
-The model uses the following configuration:
+### Training Configuration
 
 | Parameter | Value |
 |---|---|
 | Architecture | MobileNetV2 Transfer Learning |
-| Input size | 224 × 224 × 3 |
+| Input Size | 224 × 224 × 3 |
 | Optimizer | Adam |
-| Learning rate | 0.0001 |
-| Loss function | Binary Crossentropy |
+| Learning Rate | 0.0001 |
+| Loss Function | Binary Crossentropy |
 | Epochs | 5 |
-| Batch size | 32 |
+| Batch Size | 32 |
 | Dropout | 0.30 |
-| Base model | Frozen |
-
-### Class Weighting
-
-The dataset contains more PNEUMONIA images than NORMAL images.
-
-To account for this imbalance, class weights are calculated from the training class counts and passed to the model during training.
-
-The training class counts used by the implementation are:
-
-```text
-NORMAL     : 1,341
-PNEUMONIA  : 3,875
-```
-
-The class weights are passed through the Keras training process using:
-
-```python
-class_weight=class_weights
-```
-
-This gives the minority NORMAL class greater influence during training.
+| Base Model | Frozen |
 
 ---
 
-## 13. Training Callbacks
+## Class Imbalance Handling
 
-Two callbacks are used during training.
+The training dataset contains more PNEUMONIA images than NORMAL images.
+
+Training class counts:
+
+    NORMAL     : 1,341
+    PNEUMONIA  : 3,875
+
+Class weights are calculated from the training distribution and passed to Keras during training.
+
+This gives the minority NORMAL class greater influence during model optimization.
+
+---
+
+## Training Callbacks
 
 ### Early Stopping
 
 The model monitors:
 
-```text
-val_loss
-```
+    val_loss
 
-with:
+Configuration:
 
-```text
-patience = 2
-restore_best_weights = True
-```
+    patience = 2
+    restore_best_weights = True
 
-This allows training to stop when validation loss stops improving while restoring the best weights observed during training.
+This allows training to stop when validation loss stops improving while restoring the best observed model weights.
 
 ### Model Checkpoint
 
-The best model according to validation loss is saved using:
+The best model according to validation loss is saved as:
 
-```text
-models/chest_xray_mobilenetv2.keras
-```
+    models/chest_xray_mobilenetv2.keras
 
 The checkpoint uses:
 
-```text
-save_best_only = True
-```
-
-This ensures that the best validation-loss model is retained rather than simply the final epoch model.
+    save_best_only = True
 
 ---
 
-## 14. Training History and Generated Outputs
+## Training History
 
 Training history is saved to:
 
-```text
-outputs/training_history.csv
-```
+    outputs/training_history.csv
 
-The project also generates training-related visualization output during the visualization stage.
+Training visualization is generated during the visualization stage.
 
-Useful project evidence includes:
+The training history can be used to inspect:
 
-- Training logs
 - Training accuracy
 - Validation accuracy
-- Training history
-- Prediction results
-- Preprocessing visualization
+- Training behavior across epochs
 
-The generated outputs are kept outside the core source-code modules and are excluded from Git tracking according to the current `.gitignore` configuration.
+---
 
-## 15. Model Evaluation
+## Model Evaluation
 
 Model evaluation is implemented in:
 
-```text
-src/evaluate.py
-```
+    src/evaluate.py
 
-The saved model is evaluated against the test dataset containing:
-
-```text
-624 images
-```
+The saved model is evaluated against the test dataset containing **624 images**.
 
 The evaluation calculates:
 
@@ -528,35 +355,23 @@ The evaluation calculates:
 
 ### Classification Threshold
 
-The model produces a sigmoid probability.
+The current classification threshold is:
 
-The project uses:
+    0.50
 
-```text
-0.5
-```
+Decision logic:
 
-as the classification threshold.
+    Probability >= 0.50
+            ↓
+       PNEUMONIA
 
-Therefore:
-
-```text
-Probability >= 0.5
-        ↓
-PNEUMONIA
-```
-
-and:
-
-```text
-Probability < 0.5
-        ↓
-NORMAL
-```
+    Probability < 0.50
+            ↓
+         NORMAL
 
 ---
 
-## 16. Test Results
+## Verified Test Results
 
 The verified test-set results are:
 
@@ -568,60 +383,40 @@ The verified test-set results are:
 | Recall | **94.36%** |
 | F1-score | **90.42%** |
 
-### Confusion Matrix
-
-```text
-                 Predicted
-              NORMAL  PNEUMONIA
-
-Actual NORMAL    178      56
-Actual PNEUMONIA  22     368
-```
-
 The model correctly classified:
 
 - 178 NORMAL images
 - 368 PNEUMONIA images
 
-The model identified 368 out of 390 pneumonia cases in the test set.
-
-The results show a relatively high recall for the PNEUMONIA class, which is particularly relevant when considering the importance of reducing missed positive cases in an educational medical-image classification setting.
-
-These results should not be interpreted as clinical performance.
+These results represent performance on the project's test dataset only and should not be interpreted as clinical performance.
 
 ---
 
-## 17. Single Image Inference
+## Single Image Inference
 
 Single-image inference is implemented in:
 
-```text
-src/predict.py
-```
+    src/predict.py
 
 The inference workflow is:
 
-```text
-Input X-ray
-      ↓
-Open Image
-      ↓
-Convert to RGB
-      ↓
-Resize to 224 × 224
-      ↓
-Normalize 0–255 → 0–1
-      ↓
-Load Trained Model
-      ↓
-Generate Sigmoid Probability
-      ↓
-Apply 0.5 Threshold
-      ↓
-NORMAL / PNEUMONIA
-      ↓
-Confidence + Probability
-```
+    Input X-ray
+          ↓
+    Convert to RGB
+          ↓
+    Resize to 224 × 224
+          ↓
+    Normalize 0–255 → 0–1
+          ↓
+    Load trained model
+          ↓
+    Generate sigmoid probability
+          ↓
+    Apply 0.50 threshold
+          ↓
+    NORMAL / PNEUMONIA
+          ↓
+    Confidence + Probability
 
 The prediction script reports:
 
@@ -630,252 +425,329 @@ The prediction script reports:
 - Confidence
 - PNEUMONIA probability
 
-### Example Verified Prediction
+### Verified Example
 
-One verified test-image inference produced:
-
-```text
-Prediction  : NORMAL
-Confidence  : 0.6413
-Probability : 0.3587
-```
+    Prediction  : NORMAL
+    Confidence  : 0.6413
+    Probability : 0.3587
 
 The probability represents the predicted probability of the PNEUMONIA class.
 
 ---
 
-## 18. Project Outputs and Proof Assets
+## Streamlit Application
 
-The project is designed to produce practical proof of each major stage.
+The project includes an interactive Streamlit application:
 
-Recommended proof assets include:
+    app.py
 
-### Data Pipeline Proof
+The UI was developed after the core machine-learning pipeline was completed.
 
-- Dataset verification output
-- Image shape verification
-- Pixel-range verification
-- Class-name verification
+The application allows the user to:
 
-### Model Proof
+1. Upload a chest X-ray.
+2. Preview the image.
+3. Run AI analysis.
+4. View the predicted class.
+5. View confidence.
+6. View pneumonia probability.
+7. View model information.
 
-- Model summary
-- Input shape
-- Output shape
-- MobileNetV2 architecture
-- Frozen base-model confirmation
-
-### Training Proof
-
-- Training terminal output
-- Epoch results
-- Validation metrics
-- Model checkpoint confirmation
-- Training history
-
-### Evaluation Proof
-
-- Test-set metrics
-- Confusion matrix
-- Classification report
-
-### Prediction Proof
-
-- Test prediction visualization
-- Single-image prediction output
-- Predicted class and probability
-
-### Documentation Proof
-
-- System workflow diagram
-- GitHub repository
-- README preview
-
-These assets should represent real outputs from the implemented project rather than decorative mockups.
+This extends the project from a trained machine-learning model into a usable AI application.
 
 ---
 
-## 19. Project Structure
+## Application Workflow
 
-The core repository structure is:
-
-```text
-Project-4-AI-Medical-Image-Analysis/
-│
-├── src/
-│   ├── data_pipeline.py
-│   ├── model.py
-│   ├── train.py
-│   ├── evaluate.py
-│   └── predict.py
-│
-├── .gitignore
-├── requirements.txt
-└── README.md
-```
-
-The project may also contain generated output and model directories locally.
-
-The dataset itself is stored outside the repository.
-
-The current `.gitignore` excludes:
-
-- Virtual environment files
-- Python cache files
-- Raw and processed datasets
-- Trained model files
-- Generated outputs
-- Environment files
-- IDE-specific files
+    User
+      ↓
+    Upload Chest X-ray
+      ↓
+    Image Preview
+      ↓
+    Run AI Analysis
+      ↓
+    Load Trained Model
+      ↓
+    Preprocess Image
+      ↓
+    Generate Probability
+      ↓
+    Apply Classification Threshold
+      ↓
+    Display Result
 
 ---
 
-## 20. Installation
+## Live Demo
+
+The application is publicly deployed using **Streamlit Community Cloud**.
+
+### Live Application
+
+https://ai-medical-image-analysis-kxbuyy5vq8oxzks3jnr8gb.streamlit.app/
+
+The deployed application was successfully tested using a chest X-ray image.
+
+Deployment environment:
+
+    Python 3.12
+
+---
+
+## Project Structure
+
+    Project-4-AI-Medical-Image-Analysis/
+    │
+    ├── src/
+    │   ├── data_pipeline.py
+    │   ├── model.py
+    │   ├── train.py
+    │   ├── evaluate.py
+    │   ├── predict.py
+    │   ├── visualize_preprocessing.py
+    │   ├── visualize_training.py
+    │   └── visualize_predictions.py
+    │
+    ├── models/
+    │   └── chest_xray_mobilenetv2.keras
+    │
+    ├── outputs/
+    │
+    ├── app.py
+    ├── requirements.txt
+    ├── .gitignore
+    └── README.md
+
+The local dataset is excluded from the repository.
+
+---
+
+## Important Files
+
+| File | Purpose |
+|---|---|
+| `app.py` | Streamlit application |
+| `src/data_pipeline.py` | Dataset loading and preprocessing |
+| `src/model.py` | MobileNetV2 model architecture |
+| `src/train.py` | Model training |
+| `src/evaluate.py` | Model evaluation |
+| `src/predict.py` | Single-image inference |
+| `requirements.txt` | Project dependencies |
+| `.gitignore` | Git exclusions |
+| `README.md` | Project documentation |
+
+---
+
+## Requirements
+
+The project dependencies are defined in:
+
+    requirements.txt
+
+Core libraries include:
+
+    tensorflow
+    opencv-python
+    numpy
+    matplotlib
+    scikit-learn
+    pillow
+    streamlit
+
+---
+
+## Installation
 
 ### Windows
 
 Create a virtual environment:
 
-```powershell
-python -m venv .venv
-```
+    python -m venv .venv
 
 Activate the environment:
 
-```powershell
-.venv\Scripts\Activate.ps1
-```
+    .venv\Scripts\Activate.ps1
 
-Install the required libraries:
+Install dependencies:
 
-```powershell
-pip install -r requirements.txt
-```
+    pip install -r requirements.txt
 
 ### macOS / Linux
 
 Create a virtual environment:
 
-```bash
-python3 -m venv .venv
-```
+    python3 -m venv .venv
 
 Activate the environment:
 
-```bash
-source .venv/bin/activate
-```
+    source .venv/bin/activate
 
-Install the required libraries:
+Install dependencies:
 
-```bash
-pip install -r requirements.txt
-```
+    pip install -r requirements.txt
 
 ---
 
-## 21. Dataset Configuration
+## Dataset Configuration
 
 The dataset is not included in the GitHub repository.
 
-After downloading and extracting the dataset, use the following structure:
+After downloading and extracting the dataset, configure the local path in:
 
-```text
-chest_xray/
-├── train/
-│   ├── NORMAL/
-│   └── PNEUMONIA/
-│
-├── val/
-│   ├── NORMAL/
-│   └── PNEUMONIA/
-│
-└── test/
-    ├── NORMAL/
-    └── PNEUMONIA/
-```
+    src/data_pipeline.py
 
-Open:
+Example:
 
-```text
-src/data_pipeline.py
-```
+    DATASET_DIR = Path(
+        r"YOUR_LOCAL_CHEST_XRAY_DATASET_PATH"
+    )
 
-and update:
-
-```python
-DATASET_DIR = Path(
-    r"YOUR_LOCAL_CHEST_XRAY_DATASET_PATH"
-)
-```
-
-Replace the placeholder with the local path of the `chest_xray` directory.
+Replace the placeholder with the actual local `chest_xray` directory.
 
 ---
 
-## 22. How to Run the Project
+## How to Run
 
-### Step 1 — Verify the Data Pipeline
+### 1. Verify the Data Pipeline
 
-Run:
+    python src/data_pipeline.py
 
-```powershell
-python src/data_pipeline.py
-```
+This verifies dataset loading, class names, image shapes, label shapes, and pixel range.
 
-This verifies:
+### 2. Verify the Model
 
-- Dataset loading
-- Class names
-- Image shapes
-- Label shapes
-- Pixel range
-- Expected image format
+    python src/model.py
 
-### Step 2 — Verify the Model
+This verifies the model architecture, input shape, output shape, MobileNetV2 configuration, and frozen base model.
 
-Run:
+### 3. Train the Model
 
-```powershell
-python src/model.py
-```
+    python src/train.py
 
-This verifies:
+This performs dataset loading, class-weight calculation, model training, early stopping, checkpointing, and training-history saving.
 
-- Model architecture
-- Input shape
-- Output shape
+### 4. Evaluate the Model
+
+    python src/evaluate.py
+
+This produces the evaluation metrics, confusion matrix, and classification report.
+
+### 5. Run Single Image Prediction
+
+    python src/predict.py "<PATH_TO_XRAY_IMAGE>"
+
+Example:
+
+    python src/predict.py "D:\Datasets\Medical-Datasets\chest_xray\chest_xray\test\NORMAL\IM-0001-0001.jpeg"
+
+### 6. Run the Streamlit Application
+
+    streamlit run app.py
+
+---
+
+## Deployment
+
+The application is deployed using **Streamlit Community Cloud**.
+
+Deployment configuration:
+
+    Repository : pranavraut7-ai/AI-Medical-Image-Analysis
+    Branch     : main
+    Main File  : app.py
+    Python     : 3.12
+
+### Deployment Compatibility Issue
+
+During the initial deployment attempt, the environment used Python 3.14 and TensorFlow dependency installation failed.
+
+The deployment was recreated using Python 3.12.
+
+The application then successfully installed its dependencies, launched, and completed cloud inference testing.
+
+This was a practical dependency and Python-version compatibility issue rather than a model-architecture problem.
+
+---
+
+## Cloud Inference Test
+
+After deployment, the public application was tested using a chest X-ray image.
+
+Verified workflow:
+
+    Image Upload        → PASS
+    Image Preview       → PASS
+    Model Loading       → PASS
+    Inference           → PASS
+    Prediction Display  → PASS
+    Confidence Display  → PASS
+    Probability Display → PASS
+
+The complete cloud inference workflow therefore works successfully.
+
+---
+
+## Project Development Workflow
+
+The project was developed progressively:
+
+    Project Setup
+          ↓
+    Dataset & Data Pipeline
+          ↓
+    Model Development
+          ↓
+    Training
+          ↓
+    Evaluation
+          ↓
+    Prediction
+          ↓
+    Visualization
+          ↓
+    Streamlit UI
+          ↓
+    GitHub Repository
+          ↓
+    Cloud Deployment
+          ↓
+    Cloud Testing
+          ↓
+    Documentation
+
+The UI was intentionally developed after the core AI system was functional.
+
+This demonstrates progression from a machine-learning implementation toward a complete AI application.
+
+---
+
+## Proof of Work
+
+The project produces practical evidence across the development lifecycle.
+
+### Data
+
+- Dataset verification
+- Class distribution
+- Image loading
+- Image shape verification
+
+### Model
+
+- Model summary
 - MobileNetV2 configuration
 - Frozen base model
-- Model summary
+- Classification head
 
-### Step 3 — Train the Model
+### Training
 
-Run:
+- Training logs
+- Epoch results
+- Validation behavior
+- Best-model checkpoint
 
-```powershell
-python src/train.py
-```
-
-This performs:
-
-- Dataset loading
-- Class-weight calculation
-- Model construction
-- Model training
-- Early stopping
-- Best-model checkpointing
-- Training-history saving
-
-### Step 4 — Evaluate the Model
-
-Run:
-
-```powershell
-python src/evaluate.py
-```
-
-This produces:
+### Evaluation
 
 - Accuracy
 - Precision
@@ -884,213 +756,220 @@ This produces:
 - Confusion matrix
 - Classification report
 
-### Step 5 — Run Single Image Prediction
+### Inference
 
-Run:
+- Single-image prediction
+- Probability
+- Confidence
+- Test prediction visualization
 
-```powershell
-python src/predict.py "<PATH_TO_XRAY_IMAGE>"
-```
+### Application
 
-Example:
-
-```powershell
-python src/predict.py "D:\Datasets\Medical-Datasets\chest_xray\chest_xray\test\NORMAL\IM-0001-0001.jpeg"
-```
-
-The prediction script returns the predicted class, confidence, and PNEUMONIA probability.
-
----
-
-## 23. Complete Workflow
-
-The complete project execution flow is:
-
-```text
-1. Configure Environment
-        ↓
-2. Configure Dataset Path
-        ↓
-3. Verify Data Pipeline
-        ↓
-4. Verify Model Architecture
-        ↓
-5. Train MobileNetV2 Classifier
-        ↓
-6. Save Best Model
-        ↓
-7. Save Training History
-        ↓
-8. Evaluate on Test Dataset
-        ↓
-9. Analyze Metrics and Confusion Matrix
-        ↓
-10. Run Single Image Prediction
-        ↓
-11. Capture Project Evidence
-        ↓
-12. Document and Publish on GitHub
-```
-
-This workflow demonstrates a complete practical machine-learning development cycle from dataset handling through model evaluation and inference.
+- Streamlit interface
+- Uploaded X-ray
+- AI prediction
+- Public cloud deployment
+- Successful cloud inference
 
 ---
 
-## 24. Limitations
+## Industry-Oriented Workflow
 
-This project is an educational and engineering demonstration rather than a clinical diagnostic system.
+The project follows a practical AI engineering lifecycle:
+
+    Problem Definition
+          ↓
+    Dataset Selection
+          ↓
+    Data Pipeline
+          ↓
+    Preprocessing
+          ↓
+    Model Development
+          ↓
+    Training
+          ↓
+    Evaluation
+          ↓
+    Inference
+          ↓
+    Application Development
+          ↓
+    Cloud Deployment
+          ↓
+    Testing
+          ↓
+    Documentation
+
+The objective is to demonstrate the complete engineering process required to move from an AI problem to a working application.
+
+---
+
+## Limitations
+
+This project is an educational and engineering proof-of-work rather than a clinical diagnostic system.
 
 ### Dataset Dependency
 
-The model is trained on a specific public chest X-ray dataset. Performance may differ when applied to images from other datasets, hospitals, imaging devices, or patient populations.
+The model was trained on a specific public chest X-ray dataset.
 
-### Validation Dataset
+Performance may differ when applied to:
 
-The provided dataset contains a relatively small validation set compared with the training and test sets.
+- Different datasets
+- Different hospitals
+- Different imaging devices
+- Different patient populations
+- Different acquisition conditions
+
+### Small Validation Set
+
+The provided validation set is relatively small compared with the training and test datasets.
 
 ### Frozen Feature Extractor
 
-The MobileNetV2 feature extractor remains frozen during the current training process. The project does not perform fine-tuning of the pretrained layers.
+The current implementation keeps the MobileNetV2 feature extractor frozen.
+
+Fine-tuning is not implemented.
 
 ### Binary Classification
 
-The current system only predicts:
+The model only predicts:
 
-```text
-NORMAL
-```
+    NORMAL
+    PNEUMONIA
 
-or:
-
-```text
-PNEUMONIA
-```
-
-It does not diagnose other diseases or classify specific pneumonia subtypes.
+It does not classify other diseases or specific pneumonia subtypes.
 
 ### No Clinical Validation
 
-The model has not been clinically validated and must not be used for medical diagnosis or treatment decisions.
+The model has not been clinically validated.
 
-### Dataset Generalization
+The reported metrics are dataset-level machine-learning results.
 
-Performance measured on this dataset does not guarantee equivalent performance on external clinical datasets.
+### Generalization
+
+Performance on this dataset does not guarantee equivalent performance on external clinical datasets.
 
 ---
 
-## 25. Future Improvements
+## Future Improvements
 
-Possible future extensions include:
+Potential future improvements include:
 
 - Fine-tuning selected MobileNetV2 layers.
-- Increasing the validation dataset size.
-- Introducing controlled image augmentation.
 - Testing additional transfer-learning architectures.
-- Performing systematic hyperparameter tuning.
-- Testing on an independent external dataset.
-- Adding Grad-CAM or another explainability method.
-- Building a local web-based inference interface.
-- Adding experiment tracking and model versioning.
-- Packaging the model for a controlled deployment environment.
+- Controlled image augmentation.
+- Evaluation on an independent external dataset.
+- Grad-CAM-based explainability.
+- Improved image-quality validation.
+- Experiment tracking.
+- Model versioning.
+- Automated testing.
+- Improved deployment monitoring.
 
 These are future possibilities and are not part of the current implementation.
 
 ---
 
-## 26. Learning Outcomes
+## Learning Outcomes
 
-This project provides practical experience in:
+This project provided practical experience in:
 
-- Medical image classification
-- Computer vision
-- TensorFlow and Keras
-- Transfer learning
+- Computer Vision
+- Deep Learning
+- TensorFlow
+- Keras
+- Transfer Learning
 - MobileNetV2
-- Image preprocessing
-- Binary classification
-- Class imbalance handling
-- Model training
-- Early stopping
-- Model checkpointing
-- Classification metrics
-- Confusion matrix analysis
-- Prediction visualization
-- Single-image inference
-- Python project organization
-- GitHub project development
+- Medical Image Classification
+- Image Preprocessing
+- Binary Classification
+- Class Imbalance Handling
+- Model Training
+- Early Stopping
+- Model Checkpointing
+- Model Evaluation
+- Confusion Matrix Analysis
+- Single Image Inference
+- Streamlit
+- Git
+- GitHub
+- Cloud Deployment
+- AI Application Development
 
 ---
 
-## 27. Industry-Oriented Workflow
+## Final Results
 
-The project follows a practical machine-learning engineering workflow:
+    Dataset Images : 5,856
+    Test Images    : 624
 
-```text
-Problem
-   ↓
-Public Dataset
-   ↓
-Data Pipeline
-   ↓
-Preprocessing
-   ↓
-Model Development
-   ↓
-Training
-   ↓
-Evaluation
-   ↓
-Prediction
-   ↓
-Visualization
-   ↓
-Documentation
-   ↓
-GitHub Proof of Work
-```
+    Architecture   : MobileNetV2
+    Learning       : Transfer Learning
+    Input          : 224 × 224 × 3
+    Task           : Binary Classification
 
-The objective is not to claim clinical deployment, but to demonstrate the engineering process required to develop and evaluate an AI-based medical image analysis system.
+    Accuracy       : 87.57%
+    Precision      : 86.79%
+    Recall         : 94.36%
+    F1-score       : 90.42%
+
+The final application successfully performs:
+
+    Chest X-ray Upload
+            ↓
+    AI Inference
+            ↓
+    Pneumonia Probability
+            ↓
+    NORMAL / PNEUMONIA
+            ↓
+    Confidence Display
 
 ---
 
-## 28. Project Showcase
+## Final Project Status
 
-The strongest project evidence should include:
+    Dataset Pipeline         ✅
+    Model Development        ✅
+    Model Training           ✅
+    Model Evaluation         ✅
+    Single Image Inference   ✅
+    Prediction Visualization ✅
+    Streamlit UI             ✅
+    GitHub Repository        ✅
+    Cloud Deployment         ✅
+    Cloud Inference Test     ✅
+    Documentation            🔄
 
-- System workflow diagram
-- Dataset preprocessing output
-- Model architecture verification
-- Training terminal output
-- Training history visualization
-- Test-set evaluation output
-- Confusion matrix
-- Test prediction visualization
-- Single-image inference output
-- GitHub repository
-- README preview
-
-The showcase should focus on real outputs generated by the working system.
-
-This makes the repository easier for recruiters and technical reviewers to understand and verify.
+The core AI application is functionally complete and publicly deployed.
 
 ---
 
-## 29. Medical Disclaimer
+## Live Demo
 
-This project is intended strictly for educational, engineering, research, and portfolio purposes.
+**Streamlit Application:**
 
-It is **not a medical device** and has not been clinically validated.
-
-The predictions generated by the model must not be used as a substitute for diagnosis, treatment, or professional medical judgment.
-
-Any real-world medical application would require appropriate clinical validation, regulatory compliance, patient-safety evaluation, representative clinical data, qualified medical oversight, and appropriate deployment controls.
+https://ai-medical-image-analysis-kxbuyy5vq8oxzks3jnr8gb.streamlit.app/
 
 ---
 
-## 30. Author
+## Author
 
 **Pranav**
 
 AI / Machine Learning Engineering Project
 
-Built as an industry-oriented proof-of-work project demonstrating the practical application of deep learning and computer vision to medical image analysis.
+Built as an industry-oriented proof-of-work demonstrating the practical application of deep learning, computer vision, medical image classification, application development, and cloud deployment.
+
+---
+
+## Medical Disclaimer
+
+This project is intended strictly for educational, engineering, research, and portfolio purposes.
+
+It is **not a medical device** and has not been clinically validated.
+
+Predictions generated by this system must not be used as a substitute for professional medical diagnosis, treatment, or medical decision-making.
+
+Any real-world medical deployment would require appropriate clinical validation, regulatory compliance, representative clinical data, patient-safety evaluation, qualified medical oversight, and appropriate deployment controls.
